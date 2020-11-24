@@ -1,0 +1,35 @@
+variables:
+  package.name: "package"
+  python.version: "3.7"
+
+steps:
+  - task: UsePythonVersion@0
+    displayName: "Use Python $(python.version)"
+    inputs:
+      versionSpec: "$(python.version)"
+
+  - script: "mv src/python_package src/$(package.name)"
+    displayName: "Rename package"
+
+  - script: "export PACKAGE_NAME=$(package.name)"
+    displayName: "Export variable"
+
+  - script: "pip install wheel"
+    displayName: "Install Wheel"
+
+  - script: "python setup.py bdist_wheel"
+    displayName: "Build"
+
+  - task: CopyFiles@2
+    displayName: Copy dist files
+    inputs:
+      sourceFolder: dist/
+      contents: $(package.name)*.whl
+      targetFolder: $(Build.ArtifactStagingDirectory)
+      flattenFolders: true
+
+  - task: PublishBuildArtifacts@1
+    displayName: "Publish Artifact"
+    inputs:
+      pathtoPublish: $(Build.ArtifactStagingDirectory)
+      ArtifactName: $(package.name).whl
