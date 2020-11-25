@@ -19,9 +19,8 @@ def fibo():
         yield x
 
 
-if __name__ == "__main__":
-    # User wants to see fibonacci number n
-    n = get_args().n
+def main(n=0):
+    """Run program."""
     # We create a fibonacci sequence generator
     generator = fibo()
     # We slice the generator
@@ -30,3 +29,9 @@ if __name__ == "__main__":
     nth_fibonacci_number = next(subset)
     # Finally we print the result
     print(f'Fibonacci number {n} is {nth_fibonacci_number}')
+
+
+if __name__ == "__main__":
+    # User wants to see fibonacci number n
+    n = get_args().n
+    main(n)
