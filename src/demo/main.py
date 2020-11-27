@@ -28,7 +28,8 @@ def main(n=0):
     # And we take the first result from the subset
     nth_fibonacci_number = next(subset)
     # Finally we print the result
-    print(f'Fibonacci number {n} is {nth_fibonacci_number}')
+    print(f'Fibonacci number {n} is',
+          nth_fibonacci_number)
 
 
 if __name__ == "__main__":
