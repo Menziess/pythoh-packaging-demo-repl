@@ -19,20 +19,17 @@ def fibo():
         yield x
 
 
-def main(n=0):
-    """Run program."""
-    # We create a fibonacci sequence generator
-    generator = fibo()
-    # We slice the generator
-    subset = islice(generator, n, None)
-    # And we take the first result from the subset
-    nth_fibonacci_number = next(subset)
+def main():
+    n = get_args().n
+    g = fibo()
+
+    # Slice generator, pick first result
+    subset = islice(g, n, None)
+    result = next(subset)
+
     # Finally we print the result
-    print(f'Fibonacci number {n} is',
-          nth_fibonacci_number)
+    print(f'Fibonacci number {n} is {result}')
 
 
 if __name__ == "__main__":
-    # User wants to see fibonacci number n
-    n = get_args().n
-    main(n)
+    main()
