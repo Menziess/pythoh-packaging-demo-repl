@@ -15,7 +15,7 @@ if __name__ == '__main__':
         install_requires=[],
         entry_points={
             'console_scripts': [
-                'fibo=demo.main:main'
+                'fibo=demo.main:cli'
             ]
         }
         # data_files=[

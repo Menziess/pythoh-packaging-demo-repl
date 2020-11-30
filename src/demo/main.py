@@ -30,6 +30,12 @@ def main(n=0):
     print(f'Fibonacci number {n} is {result}')
 
 
+def cli():
+    """Allow console script input (setup.py)."""
+    n = get_args().n
+    main(n)
+
+
 if __name__ == "__main__":
     n = get_args().n
     main(n)
