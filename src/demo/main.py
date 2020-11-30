@@ -19,11 +19,10 @@ def fibo():
         yield x
 
 
-def main():
-    n = get_args().n
-    g = fibo()
-
+def main(n=0):
+    """Run main program."""
     # Slice generator, pick first result
+    g = fibo()
     subset = islice(g, n, None)
     result = next(subset)
 
@@ -32,4 +31,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    n = get_args().n
+    main(n)
