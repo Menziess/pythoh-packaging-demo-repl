@@ -36,10 +36,10 @@ clean:
 	@find . -not -path './.venv*' -path '*/*.egg-info*' -delete
 
 dockerize: build
-	docker build --rm -f "Dockerfile" -t demo:latest .
+	docker build --rm -f "Dockerfile" -t demo .
 
 run:
-	docker run --rm -it demo:latest
+	docker run --rm -it demo
 
 install-package-databricks:
 	@echo Installing 'dist/${WHEELNAME}' on databricks...
