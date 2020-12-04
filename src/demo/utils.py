@@ -1,11 +1,11 @@
 """Support working with filesystem."""
 
-import json
-import os
-import sys
+from sys import prefix
+from os.path import join
+from typing import TextIO
 
 
-def asset(filename: str, foldername: str) -> dict:
+def asset(filename: str, foldername: str) -> TextIO:
     """Get config file.
 
     Using 'data_files' property from setup.py sript.
@@ -18,10 +18,10 @@ def asset(filename: str, foldername: str) -> dict:
     # this only applies for .whl installations
     # Otherwise it will read file directly
     try:
-        filepath = os.path.join(sys.prefix, foldername, filename)
+        filepath = join(prefix, foldername, filename)
         with open(filepath) as f:
-            return json.load(f)
+            return f
     except FileNotFoundError:
-        filepath = os.path.join(foldername, filename)
+        filepath = join(foldername, filename)
         with open(filepath) as f:
-            return json.load(f)
+            return f

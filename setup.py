@@ -8,6 +8,9 @@ if __name__ == '__main__':
     setup(
         name=package_name,
         version='0.0.dev0',
+        author='Stefan Schenk',
+        author_email='stefan_schenk@hotmail.com',
+        description='Just a packaging example project.',
         package_dir={'': 'src'},
         packages=find_namespace_packages('src', include=[
             f'{package_name}*'
@@ -17,8 +20,8 @@ if __name__ == '__main__':
             'console_scripts': [
                 'fibo=demo.main:cli'
             ]
-        }
-        # data_files=[
-        #     ('cfg', ['cfg/model_definitions.json'])
-        # ]
+        },
+        data_files=[
+            ('data', ['data/text.txt'])
+        ]
     )
