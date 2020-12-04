@@ -5,7 +5,7 @@ from os.path import join
 from typing import TextIO
 
 
-def asset(filename: str, foldername: str) -> TextIO:
+def asset(filename: str, foldername: str = '') -> TextIO:
     """Get config file.
 
     Using 'data_files' property from setup.py sript.
