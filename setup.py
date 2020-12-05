@@ -7,7 +7,7 @@ if __name__ == '__main__':
     package_name = os.getenv('PACKAGE_NAME', 'demo')
     setup(
         name=package_name,
-        version='0.0.dev0',
+        version=os.getenv('PACKAGE_VERSION', '0.0.dev0'),
         author='Stefan Schenk',
         author_email='stefan_schenk@hotmail.com',
         description='Just a packaging example project.',
