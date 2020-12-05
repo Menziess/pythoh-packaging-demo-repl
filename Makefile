@@ -16,7 +16,7 @@ notebook:
 	@jupyter notebook --ip=0.0.0.0 --allow-root notebooks
 
 lint:
-	mypy src --ignore-missing-imports
+	mypy src/* --ignore-missing-imports
 	flake8 src --ignore=$(shell cat .flakeignore)
 
 dev:
