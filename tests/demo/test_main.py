@@ -5,6 +5,6 @@ from itertools import islice
 from demo.main import fibo
 
 
-def test_fibo():
+def test_fibo(fibo_sequence_first_ten):
     """Test fibonacci function."""
-    assert list(islice(fibo(), 10)) == [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+    assert list(islice(fibo(), 10)) == fibo_sequence_first_ten
