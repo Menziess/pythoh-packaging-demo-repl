@@ -1,2 +1,2 @@
-run = "make"
-language = "bash"
+run = "make dev"
+language = "python"
