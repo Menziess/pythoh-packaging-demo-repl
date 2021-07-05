@@ -10,7 +10,6 @@ flake8 = "*"
 pytest = "*"
 bandit = "*"
 pydocstyle = "*"
-jupyter = "*"
 
 [packages]
 

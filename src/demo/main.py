@@ -1,41 +1,30 @@
-"""Print nth fibonacci number."""
+"""A simple program."""
 
-import argparse
-from itertools import islice
-
-
-def get_args():
-    """Get the users arguments."""
-    parser = argparse.ArgumentParser('app')
-    parser.add_argument('n', type=int)
-    return parser.parse_args()
+import sys
 
 
-def fibo():
-    """Calculate the fibonacci sequence."""
-    x, y = 0, 1
-    while True:
-        x, y = y, x + y
-        yield x
+def say_hello(name='World'):
+    """Say hello.
 
+    >>> bob, *_ = getfixture('names')
+    >>> bob
+    'Bob'
 
-def main(n=0):
-    """Run main program."""
-    # Slice generator, pick first result
-    g = fibo()
-    subset = islice(g, n, None)
-    result = next(subset)
+    >>> say_hello(bob)
+    'Hello Bob!'
 
-    # Finally we print the result
-    print(f'Fibonacci number {n} is {result}')
-
-
-def cli():
-    """Allow console script input (setup.py)."""
-    n = get_args().n
-    main(n)
+    >>> say_hello(1, 2) # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    TypeError: ... takes from 0 to 1 ... but 2 were given
+    """
+    return f'Hello {name}!'
 
 
 if __name__ == "__main__":
-    n = get_args().n
-    main(n)
+
+    try:
+        your_name = sys.argv[1]
+        print(say_hello(your_name))
+    except IndexError:
+        print('Please enter your name.')

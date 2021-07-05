@@ -1,10 +1,8 @@
-"""Some tests for the main module."""
+"""Test the simple program."""
 
-from itertools import islice
-
-from demo.main import fibo
+from demo.main import say_hello
 
 
-def test_fibo():
-    """Test fibonacci function."""
-    assert list(islice(fibo(), 10)) == [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+def test_say_hello():
+    """Should return 'Hello Bob!'."""
+    assert say_hello('Bob') == 'Hello Bob!'

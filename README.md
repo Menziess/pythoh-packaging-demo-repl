@@ -1,6 +1,6 @@
 # python-packaging
 
-Just a simple demo, demonstrating the advantages of packaging python code.
+Just a simple demo.
 
 [![Run on Repl.it](https://repl.it/badge/github/menziess/python-packaging)](https://repl.it/github/menziess/python-packaging)
 
