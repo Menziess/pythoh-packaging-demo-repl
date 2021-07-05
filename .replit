@@ -1,2 +1,2 @@
-run = "make dev"
-language = "python"
+run = "python src/demo/main.py World"
+language = "python3"
