@@ -1,14 +1,14 @@
 """Support working with filesystem."""
 
-from sys import prefix
 from os.path import join
+from sys import prefix
 from typing import TextIO
 
 
 def asset(filename: str, foldername: str = '') -> TextIO:
     """Get config file.
 
-    Using 'data_files' property from setup.py sript.
+    Using 'data_files' property from setup.py script.
     """
     assert isinstance(foldername, str), 'Foldername must be string.'
     assert foldername[0] != '/', 'Foldername must not start with \'/\''
